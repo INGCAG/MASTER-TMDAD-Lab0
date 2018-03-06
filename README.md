@@ -1,6 +1,4 @@
 ## Laboratorio 0 : Creación de un wrapper REST sobre Twitter
+## Cesar A. Guayara L.
 
-La versión de partida de este repositorio es MVC. 
-Se puede ver desplegada en [https://tmdad-lab0.herokuapp.com/](https://tmdad-lab0.herokuapp.com/).
-
-Tu objetivo es *RESTificarla*.
+Se puede ver desplegada en [https://master-tmdad-lab0-744163.herokuapp.com/](https://master-tmdad-lab0-744163.herokuapp.com/).
