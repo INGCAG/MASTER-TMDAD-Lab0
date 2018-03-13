@@ -13,6 +13,7 @@
           href="http://netdna.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.min.css}"/>
 </head>
+
 <body>
 <div class="card-columns">
     <div th:fragment="content" th:each="tweet: ${res.tweets}">
@@ -35,6 +36,7 @@
             </div>
         </div>
     </div>
+
     <script defer="" src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"
             th:src="@{/webjars/font-awesome/5.0.6/svg-with-js/js/fontawesome-all.js}"></script>
 </div>

@@ -17,7 +17,7 @@ public class SearchController {
 
     @RequestMapping("/")
     public String greeting() {
-        return "index";
+        return "index-old";
     }
 
     @RequestMapping("/search")
