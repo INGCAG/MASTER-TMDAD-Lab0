@@ -12,6 +12,11 @@ public class SearchControllerRest {
     @Autowired
     TwitterLookupService twitter;
 
+    @RequestMapping("/")
+    public String greeting() {
+        return "index";
+    }
+
     @RequestMapping("/searchRest")
     public String search(@RequestParam("q") String q, Model m) {
         m.addAttribute("res", twitter.search(q));
