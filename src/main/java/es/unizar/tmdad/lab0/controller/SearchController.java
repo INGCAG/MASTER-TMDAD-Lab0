@@ -15,7 +15,7 @@ public class SearchController {
     @Autowired
     TwitterLookupService twitter;
 
-    @RequestMapping("/")
+    @RequestMapping("//")
     public String greeting() {
         return "index-old";
     }

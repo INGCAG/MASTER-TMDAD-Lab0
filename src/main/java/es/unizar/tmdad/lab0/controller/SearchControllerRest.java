@@ -4,6 +4,7 @@ import es.unizar.tmdad.lab0.service.TwitterLookupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.social.UncategorizedApiException;
+import org.springframework.social.twitter.api.SearchResults;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,9 +19,8 @@ public class SearchControllerRest {
     }
 
     @RequestMapping("/searchRest")
-    public String search(@RequestParam("q") String q, Model m) {
-        m.addAttribute("res", twitter.search(q));
-        return "search :: content";
+    public SearchResults searchRest(@RequestParam("q") String q) {
+        return twitter.search(q);
     }
 
     @ResponseStatus(value= HttpStatus.BAD_REQUEST)

@@ -15,9 +15,7 @@
 <body>
 <nav class="navbar navbar-dark bg-dark navbar-expand-sm sticky-top">
     <a class="navbar-brand" href="#">Cliente MVC Twitter</a>
-    <form class="mx-2 my-auto d-inline w-100" id="search" action="search" method="get">
-
-        <!-- <form class="mx-2 my-auto d-inline w-100" id="searchRest" action="searchRest" method="get"> -->
+    <form class="mx-2 my-auto d-inline w-100" id="searchRest" action="searchRest" method="get">
         <div class="input-group">
             <input class="form-control" type="text" id="q" name="q" placeholder="Escribe algo que quieras buscar"/>
             <span class="input-group-append">
@@ -44,6 +42,24 @@
 </div>
 
 <script id="template" type="x-tmpl-mustache">
+{{#tweets}}
+    <div class="card-body">
+                <h5 class="card-title">
+                    <a
+                            href="https://twitter.com/jracing_rte"
+                            th:href="@{https://twitter.com/{user}(user=${tweet.fromUser})}"
+                            target="_blank"><span class="fas fa-user"></span> <span th:text="${tweet.fromUser}">jracing_rte</span></a>
+                    dice en
+                    <a
+                            href="https://twitter.com/jracing_rte/status/556867274335059969"
+                            th:href="@{https://twitter.com/{user}/status/{id}(user=${tweet.fromUser},id=${tweet.idStr})}"
+                            target="_blank"><span class="fab fa-twitter-square"></span> <span th:text="${tweet.idStr}">556867274335059969</span></a>
+                </h5>
+                <p class="card-text" th:text="${tweet.unmodifiedText}">CR28: iguala el record de Messi en la
+                    primera vuelta http://t.co/zmYnja4gYP vía @marca
+                </p>
+            </div>
+{{/tweets}}
 
 </script>
 
@@ -60,7 +76,7 @@
         src="../static/js/functions.js"></script>
 
 <script th:src="@{/mustache.js}"
-        src="../static/mustache.min.js" ></script>
+        src="../static/mustache.min.js"></script>
 
 </body>
 
