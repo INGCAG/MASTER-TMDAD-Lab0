@@ -8,15 +8,22 @@ import org.springframework.social.twitter.api.SearchResults;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
 @RestController
 public class SearchControllerRest {
+
     @Autowired
     TwitterLookupService twitter;
 
-    @RequestMapping("/")
-    public String greeting() {
-        return "index";
-    }
+    //@SendTo("/init")
+    //@MessageMapping("/search")
+//    @RequestMapping("/")
+//    public void greeting(HttpServletResponse response) throws IOException {
+//        response.sendRedirect("/init");
+//        //return "index :: content";
+//    }
 
     @RequestMapping("/searchRest")
     public SearchResults searchRest(@RequestParam("q") String q) {

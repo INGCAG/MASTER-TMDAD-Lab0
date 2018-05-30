@@ -14,10 +14,11 @@ function registerSearch() {
 
 $(document).ready(function() {
 	registerSearch();
+    registerSearchRest();
 });
 
 function registerSearchRest() {
-    $("#search").submit(function (event) {
+    $("#searchRest").submit(function (event) {
         event.preventDefault();
         var target = $(this).attr('action');
         var query = $("#q").val();

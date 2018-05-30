@@ -12,24 +12,24 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class SearchController {
 
-    @Autowired
-    TwitterLookupService twitter;
+//    @Autowired
+//    TwitterLookupService twitter;
 
-    @RequestMapping("//")
+    @RequestMapping("/init")
     public String greeting() {
-        return "index-old";
+        return "index";
     }
 
     @RequestMapping("/search")
     public String search(@RequestParam("q") String q, Model m) {
-        m.addAttribute("res", twitter.search(q));
+//        m.addAttribute("res", twitter.search(q));
         return "search :: content";
     }
 
     @ResponseStatus(value= HttpStatus.BAD_REQUEST)
     @ExceptionHandler(UncategorizedApiException.class)
     public String handleUncategorizedApiException(Model m) {
-        m.addAttribute("res", twitter.emptyAnswer());
+//        m.addAttribute("res", twitter.emptyAnswer());
         return "search :: content";
     }
 }
